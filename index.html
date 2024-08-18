@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>Minha Página</title>
+    <style>
+        form {
+            background-color: aliceblue;
+            margin: auto;
+            align-content: center;
+        }
+        input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            display: block;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: lightcoral;
+            position: fixed; 
+            width: 100%;
+            bottom: 0;
+        }
+        ##hh{
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <div id="formu">
+        <form id="formulario">
+            <input type="text" id="name" placeholder="Seu Nome">
+            <input type="email" id="email" placeholder="seuNome@email.com">
+            <button type="button" id="botao">Submeter</button>
+        </form>
+    </div>
+    <div id="hh"></div>
+    <div id="pagina">
+        Bem-vindo à minha página<br>
+    </div>
+    <footer>
+        <a href="Meu CV Digital.html">Experiência</a> <br>
+        <a href="Formação.html">Formação Acadêmica</a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('pagina').style.display = 'none';
+            document.getElementById('formu').style.display = 'block';
+            document.querySelector('footer').style.display = 'none';
+        });
+
+        document.getElementById('botao').addEventListener('click', function() {
+            const Nome = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            document.getElementById('formu').style.display = 'none';
+            document.getElementById('pagina').style.display = 'block';
+            document.getElementById('hh').innerText = "Obrigado por partilhar os seus detalhes.\nNome: " + Nome + "\nEmail: " + email;
+
+            document.querySelector('footer').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
